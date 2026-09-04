@@ -1,4 +1,4 @@
-import { MapPin, Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 const departments = [
   { code: "75", name: "Paris" },
@@ -233,31 +233,6 @@ export function CoverageArea() {
               <p className="text-sm text-slate-500 italic">
                 &hellip; et plus encore
               </p>
-            </div>
-
-            <div className="mt-8 flex flex-col items-start justify-between gap-4 rounded-2xl bg-white p-6 shadow-sm sm:flex-row sm:items-center">
-              <div className="flex items-center gap-4">
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-blue-700 text-white">
-                  <Phone className="size-5" />
-                </span>
-                <div>
-                  <p className="font-semibold text-blue-950">
-                    Besoin d&rsquo;une intervention ?
-                  </p>
-                  <p className="text-sm text-slate-600">
-                    Vérifiez la disponibilité dans votre ville.
-                  </p>
-                </div>
-              </div>
-              <div className="text-left sm:text-right">
-                <a
-                  href="tel:+33768841324"
-                  className="text-lg font-bold text-blue-700 hover:text-blue-800"
-                >
-                  07 68 84 13 24
-                </a>
-                <p className="text-xs text-slate-500">Lun - Ven : 9h - 17h</p>
-              </div>
             </div>
           </div>
         </div>

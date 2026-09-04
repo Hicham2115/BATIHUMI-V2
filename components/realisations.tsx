@@ -2,16 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import {
-  ArrowRight,
-  Calendar,
-  ChevronsLeftRight,
-  Image as ImageIcon,
-  MapPin,
-} from "lucide-react";
-
-import { Button } from "@/components/ui/button";
+import { ChevronsLeftRight } from "lucide-react";
 
 const projects = [
   {
@@ -185,32 +176,6 @@ export function Realisations() {
               </div> */}
             </div>
           ))}
-        </div>
-
-        <div className="mt-10 flex flex-col items-center gap-6 rounded-2xl bg-white p-8 shadow-sm sm:flex-row sm:justify-between">
-          <div className="flex items-center gap-4 text-center sm:text-left">
-            <span className="flex size-14 shrink-0 items-center justify-center rounded-full bg-slate-100 text-blue-950">
-              <ImageIcon className="size-6" />
-            </span>
-            <div>
-              <p className="font-heading text-base font-bold text-blue-950">
-                Vous avez un projet similaire ?
-              </p>
-              <p className="mt-1 text-sm text-slate-600">
-                Nos experts vous accompagnent avec des solutions sur-mesure
-                adaptées à votre situation.
-              </p>
-            </div>
-          </div>
-          <Button
-            size="lg"
-            className="w-full shrink-0 gap-2 bg-blue-950 text-white hover:bg-blue-900 sm:w-auto"
-            render={<Link href="/diagnostic" />}
-            nativeButton={false}
-          >
-            Demander un diagnostic gratuit
-            <ArrowRight className="size-4" />
-          </Button>
         </div>
       </div>
     </section>
