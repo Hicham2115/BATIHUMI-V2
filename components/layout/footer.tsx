@@ -85,8 +85,8 @@ export function Footer() {
         <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6 md:p-8">
           <CtaBanner />
 
-          <div className="grid grid-cols-1 gap-10 px-4 pt-12 pb-6 sm:px-6 md:grid-cols-[1.3fr_1fr_1fr_1fr] md:px-8">
-            <div>
+          <div className="grid grid-cols-1 gap-10 px-4 pt-12 pb-6 sm:grid-cols-2 sm:px-6 md:px-8 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+            <div className="sm:col-span-2 lg:col-span-1">
               <Link href="/" className="flex items-center">
                 <Image
                   src="/images/logo.png"

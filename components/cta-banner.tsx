@@ -33,7 +33,7 @@ export function CtaBanner() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-950/85 to-blue-950/20" />
 
-      <div className="relative flex min-h-[560px] flex-col justify-center gap-7 p-8 md:p-14 lg:max-w-2xl">
+      <div className="relative flex min-h-120 flex-col justify-center gap-7 p-6 sm:min-h-140 sm:p-8 md:p-14 lg:max-w-2xl">
         <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
           <FileText className="size-4 text-blue-400" />
           Expertise avant vente
@@ -73,7 +73,7 @@ export function CtaBanner() {
 
         <Button
           size="lg"
-          className="h-auto w-fit gap-2 bg-blue-700 px-8 py-3 text-white hover:bg-blue-600"
+          className="h-auto w-full gap-2 bg-blue-700 px-8 py-3 text-white hover:bg-blue-600 sm:w-fit"
           render={<Link href="#contact" />}
           nativeButton={false}
         >
