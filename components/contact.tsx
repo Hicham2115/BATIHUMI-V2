@@ -1,10 +1,25 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Clock, Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
+import {
+  CheckCircle2,
+  Clock,
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  ShieldCheck,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const contactInfo = [
   {
@@ -84,8 +99,7 @@ export function Contact() {
                 Nos coordonnées
               </h3>
               <p className="mt-2 text-sm text-blue-200">
-                Diagnostic gratuit et sans engagement, partout en
-                Île-de-France.
+                Diagnostic gratuit et sans engagement, partout en Île-de-France.
               </p>
 
               <div className="mt-8 flex-1 space-y-6">
@@ -120,13 +134,27 @@ export function Contact() {
                 })}
               </div>
 
-              <div className="mt-8 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-blue-700 text-white">
-                  <CheckCircle2 className="size-4" />
-                </span>
-                <p className="text-sm text-blue-100">
-                  Garantie décennale &middot; + de 500 projets réalisés
-                </p>
+              <div className="mt-8 flex items-center gap-6 border-t border-white/10 pt-6">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="size-4 text-blue-400" />
+                  <div>
+                    <p className="font-heading text-lg leading-none font-black text-white">
+                      10 ans
+                    </p>
+                    <p className="mt-1 text-xs text-blue-300">
+                      Garantie décennale
+                    </p>
+                  </div>
+                </div>
+                <div className="h-8 w-px bg-white/10" aria-hidden="true" />
+                <div>
+                  <p className="font-heading text-lg leading-none font-black text-white">
+                    500+
+                  </p>
+                  <p className="mt-1 text-xs text-blue-300">
+                    Projets réalisés
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -141,12 +169,14 @@ export function Contact() {
                   Merci pour votre message !
                 </h3>
                 <p className="mt-2 max-w-xs text-sm text-slate-600">
-                  Notre équipe revient vers vous sous 2h, du lundi au
-                  vendredi.
+                  Notre équipe revient vers vous sous 2h, du lundi au vendredi.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex h-full flex-col gap-5">
+              <form
+                onSubmit={handleSubmit}
+                className="flex h-full flex-col gap-5"
+              >
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div>
                     <label
@@ -205,21 +235,18 @@ export function Contact() {
                   >
                     Type de problème
                   </label>
-                  <select
-                    id="contact-service"
-                    name="service"
-                    defaultValue=""
-                    className="mt-1.5 h-11 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm text-slate-700 outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
-                  >
-                    <option value="" disabled>
-                      Sélectionnez une option
-                    </option>
-                    {services.map((service) => (
-                      <option key={service} value={service}>
-                        {service}
-                      </option>
-                    ))}
-                  </select>
+                  <Select name="service" required>
+                    <SelectTrigger id="contact-service" className="mt-1.5 h-11">
+                      <SelectValue placeholder="Sélectionnez une option" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {services.map((service) => (
+                        <SelectItem key={service} value={service}>
+                          {service}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div className="flex flex-1 flex-col">
