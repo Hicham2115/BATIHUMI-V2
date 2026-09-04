@@ -41,7 +41,7 @@ function AccordionTrigger({
         {...props}
       >
         {children}
-        <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-100 group-data-[state=open]:bg-blue-700 group-data-[state=open]:text-white">
+        <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700 shadow-sm ring-1 ring-transparent transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-100 group-hover:ring-blue-200 group-data-[state=open]:bg-blue-700 group-data-[state=open]:text-white group-data-[state=open]:ring-blue-700/30">
           <ChevronDown className="size-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
         </span>
       </AccordionPrimitive.Trigger>

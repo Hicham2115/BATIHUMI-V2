@@ -85,7 +85,7 @@ export function Faq() {
                 value={`item-${index}`}
                 className="border-white/10"
               >
-                <AccordionTrigger className="text-white hover:text-blue-300 [&>span]:bg-white/10 [&>span]:text-blue-200">
+                <AccordionTrigger className="text-white hover:text-blue-300 [&>span]:bg-white/10 [&>span]:text-blue-200 [&>span]:ring-white/0 hover:[&>span]:bg-blue-500/90 hover:[&>span]:text-white hover:[&>span]:ring-blue-400/40 data-[state=open]:[&>span]:bg-blue-500 data-[state=open]:[&>span]:text-white data-[state=open]:[&>span]:ring-blue-400/40">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-blue-100/80">
