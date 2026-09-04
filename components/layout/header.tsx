@@ -62,9 +62,9 @@ function Logo() {
 
 function PhoneBlock() {
   return (
-    <a href="tel:+33768841324" className="flex items-center gap-2">
-      <Phone className="size-5 text-blue-600" />
-      <span className="flex flex-col leading-none">
+    <a href="tel:+33768841324" className="flex shrink-0 items-center gap-2">
+      <Phone className="size-5 shrink-0 text-blue-600" />
+      <span className="flex flex-col whitespace-nowrap leading-none">
         <span className="text-base font-bold text-blue-700">
           07 68 84 13 24
         </span>
@@ -79,11 +79,13 @@ function PhoneBlock() {
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white">
-      <div className="mx-auto flex h-16 max-w-none items-center justify-between px-4 sm:px-6 md:h-20 md:px-9 lg:h-[92px]">
-        <div className="flex items-center gap-8">
+      <div className="mx-auto grid h-16 max-w-none grid-cols-[1fr_auto_minmax(max-content,1.6fr)] items-center px-4 sm:px-6 md:h-20 md:px-9 lg:h-[92px]">
+        <div className="flex items-center">
           <Logo />
+        </div>
 
-          <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
+        <div className="flex justify-center">
+          <nav className="hidden items-center gap-6 text-sm font-medium lg:flex xl:gap-8">
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={`${navLinkClass} flex items-center gap-1 outline-none data-popup-open:text-blue-700 data-popup-open:after:w-full`}
@@ -116,32 +118,33 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="hidden items-center gap-6 lg:flex">
-          <PhoneBlock />
-          <Button
-            size="lg"
-            className="group h-11 overflow-hidden bg-blue-700 p-5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-blue-900/30"
-            render={<Link href="/diagnostic" />}
-            nativeButton={false}
-          >
-            Diagnostic gratuit
-            <ArrowRight className="size-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
-          </Button>
-        </div>
-
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden">
-              <Menu className="size-5" />
-              <span className="sr-only">Ouvrir le menu</span>
+        <div className="flex items-center justify-end gap-6">
+          <div className="hidden items-center gap-4 lg:flex xl:gap-6">
+            <PhoneBlock />
+            <Button
+              size="lg"
+              className="group h-11 overflow-hidden bg-blue-700 p-5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-600 hover:shadow-blue-900/30"
+              render={<Link href="/diagnostic" />}
+              nativeButton={false}
+            >
+              Diagnostic gratuit
+              <ArrowRight className="size-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
-          </PopoverTrigger>
-          <PopoverContent
-            align="end"
-            sideOffset={8}
-            className="w-[calc(100vw-2rem)] max-w-sm rounded-xl p-3 shadow-xl lg:hidden"
-          >
-            <details className="group">
+          </div>
+
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="ghost" size="icon" className="lg:hidden">
+                <Menu className="size-5" />
+                <span className="sr-only">Ouvrir le menu</span>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent
+              align="end"
+              sideOffset={8}
+              className="w-[calc(100vw-2rem)] max-w-sm rounded-xl p-3 shadow-xl lg:hidden"
+            >
+              <details className="group">
               <summary className="flex cursor-pointer list-none items-center justify-between px-1.5 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground [&::-webkit-details-marker]:hidden">
                 Nos services
                 <ChevronDown className="size-3.5 transition-transform duration-200 group-open:rotate-180" />
@@ -183,6 +186,7 @@ export function Header() {
             </div>
           </PopoverContent>
         </Popover>
+        </div>
       </div>
     </header>
   );
