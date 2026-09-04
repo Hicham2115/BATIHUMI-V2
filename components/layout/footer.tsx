@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Droplet } from "lucide-react";
 
 import { CtaBanner } from "@/components/cta-banner";
 
@@ -74,13 +74,14 @@ export function Footer() {
 
           <div className="grid grid-cols-1 gap-10 px-4 pt-12 pb-6 sm:px-6 md:grid-cols-[1.3fr_1fr_1fr_1fr] md:px-8">
             <div>
-              <Link href="/" className="flex items-center gap-2.5">
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-blue-950">
-                  <Droplet className="size-4 text-sky-400" fill="currentColor" strokeWidth={0} />
-                </span>
-                <span className="text-lg font-extrabold tracking-tight text-blue-950">
-                  BATIHUMI
-                </span>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/logo.png"
+                  alt="Batihumi"
+                  width={64}
+                  height={64}
+                  className="size-11 shrink-0 rounded-lg"
+                />
               </Link>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-600">
                 Expert en diagnostic et traitement durable de l&rsquo;humidité

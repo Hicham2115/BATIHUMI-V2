@@ -9,7 +9,8 @@ const distribution = [
 const totalReviews = distribution.reduce((sum, row) => sum + row.count, 0);
 const maxCount = Math.max(...distribution.map((row) => row.count));
 const average = (
-  distribution.reduce((sum, row) => sum + row.stars * row.count, 0) / totalReviews
+  distribution.reduce((sum, row) => sum + row.stars * row.count, 0) /
+  totalReviews
 ).toFixed(1);
 
 const categories = [
@@ -48,14 +49,18 @@ const reviews = [
 
 export function Reviews() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section id="avis-clients" className="scroll-mt-20 bg-slate-50 py-16 md:py-24">
       <div className="mx-auto max-w-4xl px-4 md:px-8">
-        <h2 className="font-heading text-2xl font-extrabold text-blue-950">Avis clients</h2>
+        <h2 className="font-heading text-2xl font-extrabold text-blue-950">
+          Avis clients
+        </h2>
         <div className="mt-5 border-t border-slate-200" />
 
         <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-[auto_1fr] sm:items-center">
           <div className="flex shrink-0 flex-col items-center gap-1 sm:items-start sm:border-r sm:border-slate-200 sm:pr-8">
-            <p className="font-heading text-5xl font-black text-blue-950">{average}</p>
+            <p className="font-heading text-5xl font-black text-blue-950">
+              {average}
+            </p>
             <div className="flex gap-0.5" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, index) => (
                 <Star
@@ -80,8 +85,12 @@ export function Reviews() {
                     style={{ width: `${(row.count / maxCount) * 100}%` }}
                   />
                 </div>
-                <span className="w-6 shrink-0 font-semibold text-blue-950">{row.stars}.0</span>
-                <span className="w-24 shrink-0 text-slate-500">{row.count} avis</span>
+                <span className="w-6 shrink-0 font-semibold text-blue-950">
+                  {row.stars}.0
+                </span>
+                <span className="w-24 shrink-0 text-slate-500">
+                  {row.count} avis
+                </span>
               </div>
             ))}
           </div>
@@ -108,12 +117,16 @@ export function Reviews() {
                     {review.initials}
                   </span>
                   <div>
-                    <p className="font-heading text-sm font-bold text-blue-950">{review.name}</p>
+                    <p className="font-heading text-sm font-bold text-blue-950">
+                      {review.name}
+                    </p>
                     <p className="text-xs text-slate-500">{review.date}</p>
                   </div>
                 </div>
                 <div className="flex shrink-0 items-center gap-1.5">
-                  <span className="text-sm font-bold text-blue-950">{review.rating}.0</span>
+                  <span className="text-sm font-bold text-blue-950">
+                    {review.rating}.0
+                  </span>
                   <div className="flex gap-0.5" aria-hidden="true">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <Star
@@ -129,7 +142,9 @@ export function Reviews() {
                 </div>
               </div>
 
-              <p className="mt-3 text-sm leading-relaxed text-slate-700">{review.text}</p>
+              <p className="mt-3 text-sm leading-relaxed text-slate-700">
+                {review.text}
+              </p>
 
               {review.photos && (
                 <div className="mt-4 flex gap-2">
@@ -138,7 +153,13 @@ export function Reviews() {
                       key={photo}
                       className="relative size-16 shrink-0 overflow-hidden rounded-lg bg-slate-100"
                     >
-                      <Image src={photo} alt={`Photo du chantier – ${review.name}`} fill className="object-cover" sizes="64px" />
+                      <Image
+                        src={photo}
+                        alt={`Photo du chantier – ${review.name}`}
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                      />
                     </div>
                   ))}
                 </div>

@@ -6,11 +6,11 @@ import {
   Clock,
   Mail,
   MapPin,
-  Phone,
   Send,
   ShieldCheck,
 } from "lucide-react";
 
+import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -23,10 +23,11 @@ import {
 
 const contactInfo = [
   {
-    icon: Phone,
-    label: "Téléphone",
+    icon: WhatsappIcon,
+    label: "WhatsApp",
     value: "07 68 84 13 24",
-    href: "tel:+33768841324",
+    href: "https://api.whatsapp.com/send/?phone=33768841324&text&type=phone_number&app_absent=0",
+    external: true,
   },
   {
     icon: Mail,
@@ -64,7 +65,7 @@ export function Contact() {
   }
 
   return (
-    <section className="bg-slate-50 py-16 md:py-24">
+    <section id="contact" className="scroll-mt-20 bg-white py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-bold tracking-[0.14em] text-blue-700 uppercase">
@@ -124,6 +125,8 @@ export function Contact() {
                     <a
                       key={item.label}
                       href={item.href}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noopener noreferrer" : undefined}
                       className="block transition-opacity hover:opacity-80"
                     >
                       {content}
@@ -151,9 +154,7 @@ export function Contact() {
                   <p className="font-heading text-lg leading-none font-black text-white">
                     500+
                   </p>
-                  <p className="mt-1 text-xs text-blue-300">
-                    Projets réalisés
-                  </p>
+                  <p className="mt-1 text-xs text-blue-300">Projets réalisés</p>
                 </div>
               </div>
             </div>
@@ -277,6 +278,16 @@ export function Contact() {
               </form>
             )}
           </div>
+        </div>
+
+        <div className="mt-6 overflow-hidden rounded-3xl border border-slate-200 shadow-sm">
+          <iframe
+            src="https://www.google.com/maps?ll=48.973083,2.49911&z=16&t=m&hl=en&gl=MA&mapclient=embed&cid=11111625278190519576&output=embed"
+            title="Localisation de Batihumi"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-80 w-full border-0"
+          />
         </div>
       </div>
     </section>

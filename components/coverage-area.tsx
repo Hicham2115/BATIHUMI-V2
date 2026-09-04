@@ -35,7 +35,7 @@ const mapBadges = [
 
 export function CoverageArea() {
   return (
-    <section className="bg-slate-50 py-16 md:py-24">
+    <section id="zone-intervention" className="scroll-mt-20 bg-white py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-bold tracking-[0.14em] text-blue-700 uppercase">

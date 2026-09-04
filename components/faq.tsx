@@ -1,5 +1,4 @@
-import { Phone } from "lucide-react";
-
+import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import {
   Accordion,
   AccordionContent,
@@ -52,7 +51,7 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section className="relative overflow-hidden bg-blue-950 py-16 md:py-24">
+    <section id="faq" className="relative scroll-mt-20 overflow-hidden bg-blue-950 py-16 md:py-24">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
@@ -98,10 +97,12 @@ export function Faq() {
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href="tel:0768841324"
+            href="https://api.whatsapp.com/send/?phone=33768841324&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-blue-950 shadow-lg shadow-black/20 transition-colors hover:bg-blue-50"
           >
-            <Phone className="size-4" />
+            <WhatsappIcon className="size-4" />
             07 68 84 13 24 — Prendre rendez-vous maintenant
           </a>
         </div>
