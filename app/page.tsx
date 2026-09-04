@@ -8,6 +8,7 @@ import { SaleExpertise } from "@/components/sale-expertise";
 import { Reviews } from "@/components/reviews";
 import { CoverageArea } from "@/components/coverage-area";
 import { Faq } from "@/components/faq";
+import { Contact } from "@/components/contact";
 import { FadeIn } from "@/components/fade-in";
 
 export default function Home() {
@@ -32,6 +33,9 @@ export default function Home() {
       </FadeIn>
       <FadeIn>
         <Reviews />
+      </FadeIn>
+      <FadeIn>
+        <Contact />
       </FadeIn>
       <FadeIn>
         <Faq />

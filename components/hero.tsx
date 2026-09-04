@@ -158,10 +158,10 @@ function LeadForm({ className }: { className?: string }) {
   );
 }
 
-function HeroVideo({ className }: { className?: string }) {
+function HeroVideo({ className, path }: { className?: string; path: string }) {
   return (
     <video
-      src="/videos/hero.mp4"
+      src={path}
       autoPlay
       loop
       muted
@@ -181,7 +181,7 @@ export function Hero() {
       {/* Mobile / tablet: video banner with content that flows naturally below. */}
       <div className="bg-slate-950 lg:hidden">
         <div className="relative h-[min(130vw,34rem)] min-h-104 w-full overflow-hidden bg-slate-950 sm:aspect-video sm:h-auto sm:min-h-0">
-          <HeroVideo className="object-cover object-center" />
+          <HeroVideo className="object-cover object-center" path="/videos/heromobile.mp4" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-slate-950/20" />
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 to-transparent" />
 
@@ -208,7 +208,7 @@ export function Hero() {
 
       {/* Desktop: full-bleed video with a two-column layout */}
       <div className="relative hidden min-h-[820px] overflow-hidden bg-slate-950 lg:block">
-        <HeroVideo />
+        <HeroVideo path="/videos/hero.mp4" className="object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/50 via-slate-950/45 to-blue-950/15" />
         <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-black/55 to-transparent" />
 
