@@ -74,7 +74,7 @@ export function CtaBanner() {
         <Button
           size="lg"
           className="h-auto w-fit gap-2 bg-blue-700 px-8 py-3 text-white hover:bg-blue-600"
-          render={<Link href="/diagnostic" />}
+          render={<Link href="#contact" />}
           nativeButton={false}
         >
           <ArrowRight className="size-4" />

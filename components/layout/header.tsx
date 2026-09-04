@@ -95,7 +95,7 @@ export function Header() {
             <Button
               size="lg"
               className="group h-11 overflow-hidden rounded-full bg-blue-600 px-5 text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-blue-900/30"
-              render={<Link href="/diagnostic" />}
+              render={<Link href="#contact" />}
               nativeButton={false}
             >
               Demander un diagnostic
@@ -143,7 +143,7 @@ export function Header() {
                 </a>
                 <Button
                   className="bg-blue-700 text-white hover:bg-blue-800"
-                  render={<Link href="/diagnostic" />}
+                  render={<Link href="#contact" />}
                   nativeButton={false}
                 >
                   Demander un diagnostic

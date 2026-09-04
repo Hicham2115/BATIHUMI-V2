@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     const resend = new Resend(resendApiKey);
 
     const { error } = await resend.emails.send({
-      from: "Batihumi <onboarding@resend.dev>",
+      from: "Batihumi <notifications@batihumi.com>",
       to,
       replyTo: body.email,
       subject: `Nouvelle demande de contact — ${body.name}`,

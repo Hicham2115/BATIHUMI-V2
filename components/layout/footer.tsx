@@ -7,27 +7,30 @@ const linkColumns = [
   {
     title: "Nos services",
     links: [
-      { label: "Remontées capillaires", href: "/services/remontees-capillaires" },
-      { label: "Moisissures", href: "/services/moisissures" },
-      { label: "Salpêtre", href: "/services/salpetre" },
-      { label: "Infiltrations", href: "/services/infiltrations" },
-      { label: "Ventilation & VMC", href: "/services/ventilation" },
+      { label: "Remontées capillaires", href: "#services" },
+      { label: "Moisissures", href: "#services" },
+      { label: "Salpêtre", href: "#services" },
+      { label: "Infiltrations", href: "#services" },
+      { label: "Ventilation & VMC", href: "#services" },
     ],
   },
   {
     title: "Ressources",
     links: [
-      { label: "Réalisations", href: "/realisations" },
-      { label: "Avis clients", href: "/avis-clients" },
-      { label: "Blog", href: "/blog" },
-      { label: "À propos", href: "/a-propos" },
+      { label: "Réalisations", href: "#realisations" },
+      { label: "Avis clients", href: "#avis-clients" },
+      { label: "Zone d'intervention", href: "#zone-intervention" },
+      { label: "FAQ", href: "#faq" },
     ],
   },
   {
     title: "Informations légales",
     links: [
       { label: "Mentions légales", href: "/mentions-legales" },
-      { label: "Politique de confidentialité", href: "/politique-de-confidentialite" },
+      {
+        label: "Politique de confidentialité",
+        href: "/politique-de-confidentialite",
+      },
       { label: "CGV", href: "/cgv" },
     ],
   },
@@ -35,7 +38,11 @@ const linkColumns = [
 
 const socialLinks = [
   { label: "Facebook", href: "https://www.facebook.com", icon: FacebookIcon },
-  { label: "Instagram", href: "https://www.instagram.com", icon: InstagramIcon },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com",
+    icon: InstagramIcon,
+  },
   { label: "LinkedIn", href: "https://www.linkedin.com", icon: LinkedinIcon },
 ];
 
@@ -49,7 +56,13 @@ function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      {...props}
+    >
       <rect x="3.5" y="3.5" width="17" height="17" rx="4.5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17" cy="7" r="0.9" fill="currentColor" stroke="none" />
@@ -84,9 +97,10 @@ export function Footer() {
                 />
               </Link>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-600">
-                Expert en diagnostic et traitement durable de l&rsquo;humidité
-                — remontées capillaires, moisissures, salpêtre et infiltrations
-                — pour les particuliers, agences et notaires d&rsquo;Île-de-France.
+                Expert en diagnostic et traitement durable de l&rsquo;humidité —
+                remontées capillaires, moisissures, salpêtre et infiltrations —
+                pour les particuliers, agences et notaires
+                d&rsquo;Île-de-France.
               </p>
               <div className="mt-5 flex items-center gap-3">
                 {socialLinks.map((social) => (
@@ -111,7 +125,7 @@ export function Footer() {
                 </p>
                 <ul className="mt-4 space-y-2.5">
                   {column.links.map((link) => (
-                    <li key={link.href}>
+                    <li key={link.label}>
                       <Link
                         href={link.href}
                         className="group/link inline-flex items-center text-sm text-slate-600 transition-colors duration-300 hover:text-blue-700"
@@ -132,8 +146,12 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col items-center gap-2 border-t border-slate-200 px-4 pt-6 text-center text-xs text-slate-500 sm:flex-row sm:justify-between sm:px-8 sm:text-left">
-            <p>&copy; {new Date().getFullYear()} Batihumi. Tous droits réservés.</p>
-            <p>6 Rue de Belfort, 92600 Asnières-sur-Seine &middot; 07 68 84 13 24</p>
+            <p>
+              &copy; {new Date().getFullYear()} Batihumi. Tous droits réservés.
+            </p>
+            <p>
+              6 Rue de Belfort, 92600 Asnières-sur-Seine &middot; 07 68 84 13 24
+            </p>
           </div>
         </div>
       </div>

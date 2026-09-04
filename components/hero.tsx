@@ -1,17 +1,7 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  CalendarCheck,
-  CheckCircle2,
-  Lock,
-  MapPin,
-  Phone,
-  Play,
-  User,
-} from "lucide-react";
+import { CalendarCheck, CheckCircle2, Play } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 const stats = [
@@ -24,30 +14,6 @@ const trustBadges = [
   { label: "Diagnostic gratuit" },
   { label: "Réponse sous 2h" },
   { label: "Garantie décennale" },
-];
-
-const formFields = [
-  {
-    name: "name",
-    type: "text",
-    placeholder: "Nom complet",
-    autoComplete: "name",
-    icon: User,
-  },
-  {
-    name: "phone",
-    type: "tel",
-    placeholder: "Téléphone",
-    autoComplete: "tel",
-    icon: Phone,
-  },
-  {
-    name: "postalCode",
-    type: "text",
-    placeholder: "Code postal",
-    autoComplete: "postal-code",
-    icon: MapPin,
-  },
 ];
 
 function Eyebrow({ className }: { className?: string }) {
@@ -91,7 +57,7 @@ function HeroCtas({ className }: { className?: string }) {
       <Button
         size="lg"
         className="h-12 w-full gap-2 bg-blue-600 px-6 text-base font-semibold text-white transition-transform duration-300 hover:bg-blue-500 sm:w-auto"
-        render={<Link href="/diagnostic" />}
+        render={<Link href="#contact" />}
         nativeButton={false}
       >
         <CalendarCheck className="size-4" />
@@ -101,59 +67,12 @@ function HeroCtas({ className }: { className?: string }) {
         size="lg"
         variant="outline"
         className="h-12 w-full border-white/30 bg-white/5 px-6 text-base font-semibold text-white backdrop-blur-sm duration-300 sm:w-auto"
-        render={<Link href="/realisations" />}
+        render={<Link href="#services" />}
         nativeButton={false}
       >
         <Play className="size-4" />
-        Voir nos réalisations
+        Voir nos services et réalisations
       </Button>
-    </div>
-  );
-}
-
-function LeadForm({ className }: { className?: string }) {
-  return (
-    <div className={cn("relative w-full", className)}>
-      <div className="w-full rounded-2xl border-t-2 border-t-blue-500 bg-slate-950/95 p-5 pt-7 shadow-2xl shadow-black/40 backdrop-blur sm:p-6 sm:pt-8 md:p-7 md:pt-9">
-        <h2 className="font-heading text-xl font-bold tracking-tight text-white">
-          Votre <span className="text-blue-400">diagnostic gratuit</span>
-        </h2>
-        <p className="mt-1 text-sm text-slate-400">
-          Sans engagement · Réponse sous 2h
-        </p>
-
-        <form className="mt-6 space-y-3">
-          {formFields.map((field) => (
-            <div key={field.name} className="relative">
-              <field.icon
-                className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-slate-500"
-                aria-hidden="true"
-              />
-              <Input
-                name={field.name}
-                type={field.type}
-                placeholder={field.placeholder}
-                autoComplete={field.autoComplete}
-                required
-                className="h-12 rounded-xl border-white/10 bg-white/5 pl-10 text-white placeholder:text-slate-500 focus-visible:border-blue-400 focus-visible:bg-white/[0.07] focus-visible:ring-blue-400/30"
-              />
-            </div>
-          ))}
-          <Button
-            type="submit"
-            size="lg"
-            className="group h-12 w-full gap-2 bg-blue-600 text-sm font-bold tracking-wide text-white uppercase shadow-lg shadow-blue-950/40 transition-transform hover:-translate-y-0.5 hover:bg-blue-500"
-          >
-            Être rappelé
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </Button>
-        </form>
-
-        <p className="mt-4 flex items-center justify-center gap-1.5 text-xs text-slate-400">
-          <Lock className="size-3" />
-          Vos données sont 100% confidentielles
-        </p>
-      </div>
     </div>
   );
 }
@@ -181,7 +100,10 @@ export function Hero() {
       {/* Mobile / tablet: video banner with content that flows naturally below. */}
       <div className="bg-slate-950 lg:hidden">
         <div className="relative h-[min(130vw,34rem)] min-h-104 w-full overflow-hidden bg-slate-950 sm:aspect-video sm:h-auto sm:min-h-0">
-          <HeroVideo className="object-cover object-center" path="/videos/heromobile.mp4" />
+          <HeroVideo
+            className="object-cover object-center"
+            path="/videos/heromobile.mp4"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-slate-950/20" />
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 to-transparent" />
 
@@ -208,11 +130,14 @@ export function Hero() {
 
       {/* Desktop: full-bleed video with a two-column layout */}
       <div className="relative hidden min-h-[820px] overflow-hidden bg-slate-950 lg:block">
-        <HeroVideo path="/videos/hero.mp4" className="object-cover object-center" />
+        <HeroVideo
+          path="/videos/hero.mp4"
+          className="object-cover object-center"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/50 via-slate-950/45 to-blue-950/15" />
         <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-black/55 to-transparent" />
 
-        <div className="relative mx-auto grid min-h-[820px] max-w-[1470px] grid-cols-[1fr_380px] items-center gap-12 px-8 pt-32 pb-16">
+        <div className="relative mx-auto flex min-h-[820px] max-w-[1470px] items-center px-8 pt-32 pb-16">
           <div>
             <Eyebrow />
             <h1 className="mt-5 max-w-4xl font-heading text-[4.5rem] leading-[0.98] font-black tracking-[-0.03em] text-white">
@@ -228,8 +153,6 @@ export function Hero() {
             <HeroCtas className="mt-9" />
             <TrustBadges className="mt-10" />
           </div>
-
-          <LeadForm className="justify-self-end" />
         </div>
       </div>
 
