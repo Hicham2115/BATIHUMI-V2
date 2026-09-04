@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { type FormEvent } from "react";
+import { toast } from "sonner";
 import {
   CheckCircle2,
   Clock,
@@ -20,6 +21,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useSendContactMessage } from "@/hooks/use-send-contact-message";
+import { getErrorMessage } from "@/lib/get-error-message";
+import { contactSchema } from "@/lib/validations/contact";
 
 const contactInfo = [
   {
@@ -57,11 +61,30 @@ const services = [
 ];
 
 export function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const sendMessage = useSendContactMessage();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+
+    const formData = new FormData(event.currentTarget);
+    const parsed = contactSchema.safeParse({
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      service: formData.get("service"),
+      message: formData.get("message"),
+    });
+
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0]?.message ?? "Formulaire invalide");
+      return;
+    }
+
+    sendMessage.mutate(parsed.data, {
+      onError: (error) => {
+        toast.error(getErrorMessage(error));
+      },
+    });
   }
 
   return (
@@ -161,7 +184,7 @@ export function Contact() {
           </div>
 
           <div className="p-8 md:p-10">
-            {submitted ? (
+            {sendMessage.isSuccess ? (
               <div className="flex h-full flex-col items-center justify-center text-center">
                 <span className="flex size-14 items-center justify-center rounded-full bg-blue-50 text-blue-700">
                   <CheckCircle2 className="size-7" />
@@ -270,10 +293,11 @@ export function Contact() {
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={sendMessage.isPending}
                   className="mt-1 h-auto w-full gap-2 bg-blue-950 py-3 text-white hover:bg-blue-900"
                 >
                   <Send className="size-4" />
-                  Envoyer ma demande
+                  {sendMessage.isPending ? "Envoi en cours..." : "Envoyer ma demande"}
                 </Button>
               </form>
             )}

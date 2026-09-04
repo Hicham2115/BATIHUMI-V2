@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Archivo, Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
+import { Providers } from "@/components/providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -123,7 +125,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html: JSON.stringify(localBusinessJsonLd),
           }}
         />
-        <SmoothScroll>{children}</SmoothScroll>
+        <Providers>
+          <SmoothScroll>{children}</SmoothScroll>
+          <Toaster richColors position="top-center" />
+        </Providers>
       </body>
     </html>
   );
