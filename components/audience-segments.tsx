@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -14,10 +15,13 @@ import {
 const segments = [
   {
     title: "Propriétaire / Locataire",
-    description: "Vous faites face à un problème d'humidité dans votre logement ?",
+    description:
+      "Vous faites face à un problème d'humidité dans votre logement ?",
     cta: "Découvrir nos solutions",
     href: "/particuliers",
     icon: User,
+    image: "/images/proprietaire-locataire.jpg",
+    imagePosition: "center",
   },
   {
     title: "Vendeur / Acheteur immobilier",
@@ -25,13 +29,18 @@ const segments = [
     cta: "En savoir plus",
     href: "/transaction",
     icon: Home,
+    image: "/images/vendeur-acheteur.avif",
+    imagePosition: "top",
   },
   {
     title: "Agence immobilière",
-    description: "Des partenariats fiables et des tarifs préférentiels pour vos clients.",
+    description:
+      "Des partenariats fiables et des tarifs préférentiels pour vos clients.",
     cta: "Découvrir l'offre pro",
     href: "/professionnels",
     icon: Building2,
+    image: "/images/agence-immobiliere.jpg",
+    imagePosition: "center",
   },
   {
     title: "Urgence humidité",
@@ -39,6 +48,8 @@ const segments = [
     cta: "Contactez-nous maintenant",
     href: "/contact",
     icon: Phone,
+    image: "/images/urgence-humidite.jpg",
+    imagePosition: "center",
   },
 ];
 
@@ -63,24 +74,34 @@ export function AudienceSegments() {
             <span className="text-blue-700">à votre situation.</span>
           </h2>
           <p className="mt-4 text-slate-600">
-            Des solutions efficaces contre l&rsquo;humidité, adaptées à
-            chaque besoin.
+            Des solutions efficaces contre l&rsquo;humidité, adaptées à chaque
+            besoin.
           </p>
           <div className="mx-auto mt-6 h-1 w-10 rounded-full bg-blue-700" />
         </div>
 
         <div className="mt-12 grid grid-cols-1 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-white sm:grid-cols-2 sm:divide-x lg:grid-cols-4 lg:divide-y-0">
           {segments.map((segment) => (
-            <div key={segment.href} className="flex flex-col">
-              <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-slate-100" />
-              <div className="flex flex-1 flex-col items-center px-6 pb-6 text-center">
-                <span className="-mt-6 flex size-12 shrink-0 items-center justify-center rounded-full bg-blue-700 text-white shadow-lg shadow-blue-900/20">
+            <div key={segment.href} className="flex min-w-0 flex-col bg-white">
+              <div className="relative aspect-[4/3] shrink-0 overflow-hidden bg-slate-100">
+                <Image
+                  src={segment.image}
+                  alt={segment.title}
+                  fill
+                  className={`object-cover ${segment.imagePosition === "top" ? "object-top" : "object-center"}`}
+                  sizes="(min-width: 1024px) 25vw, 100vw"
+                />
+              </div>
+              <div className="flex flex-1 flex-col items-center px-6 pt-6 pb-6 text-center">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-blue-700 text-white shadow-lg shadow-blue-900/20">
                   <segment.icon className="size-5" />
                 </span>
                 <h3 className="mt-4 font-heading text-lg font-bold text-blue-950">
                   {segment.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-600">{segment.description}</p>
+                <p className="mt-2 text-sm text-slate-600">
+                  {segment.description}
+                </p>
                 <Link
                   href={segment.href}
                   className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-700 hover:text-blue-800"
@@ -105,7 +126,9 @@ export function AudienceSegments() {
               <p className="text-sm leading-tight font-semibold">
                 {point.title}
                 <br />
-                <span className="font-normal text-blue-200">{point.subtitle}</span>
+                <span className="font-normal text-blue-200">
+                  {point.subtitle}
+                </span>
               </p>
             </div>
           ))}
