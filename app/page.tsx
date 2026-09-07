@@ -17,14 +17,15 @@ export default function Home() {
       <Header />
       <Hero />
       <FadeIn>
+        <Services />
+      </FadeIn>
+      <FadeIn>
         <AudienceSegments />
       </FadeIn>
       <FadeIn>
         <CoverageArea />
       </FadeIn>
-      <FadeIn>
-        <Services />
-      </FadeIn>
+
       <FadeIn>
         <Realisations />
       </FadeIn>
