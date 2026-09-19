@@ -1,0 +1,47 @@
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { Hero } from "@/components/hero";
+import { AudienceSegments } from "@/components/audience-segments";
+import { Services } from "@/components/services";
+import { Realisations } from "@/components/realisations";
+import { SaleExpertise } from "@/components/sale-expertise";
+import { Reviews } from "@/components/reviews";
+import { CoverageArea } from "@/components/coverage-area";
+import { Faq } from "@/components/faq";
+import { Contact } from "@/components/contact";
+import { FadeIn } from "@/components/fade-in";
+
+export default function Home() {
+  return (
+    <>
+      <Header />
+      <Hero />
+      <FadeIn>
+        <Services />
+      </FadeIn>
+      <FadeIn>
+        <AudienceSegments />
+      </FadeIn>
+      <FadeIn>
+        <CoverageArea />
+      </FadeIn>
+
+      <FadeIn>
+        <Realisations />
+      </FadeIn>
+      <FadeIn>
+        <SaleExpertise />
+      </FadeIn>
+      <FadeIn>
+        <Reviews />
+      </FadeIn>
+      <FadeIn>
+        <Contact />
+      </FadeIn>
+      <FadeIn>
+        <Faq />
+      </FadeIn>
+      <Footer />
+    </>
+  );
+}
