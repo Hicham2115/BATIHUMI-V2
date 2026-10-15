@@ -60,15 +60,15 @@ function useScrolled(threshold = 24) {
   return scrolled;
 }
 
-export function Header() {
+export function Header({ alwaysVisible = false }: { alwaysVisible?: boolean }) {
   const scrolled = useScrolled();
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
-        scrolled
-          ? "border-white/10 bg-blue-950/70 shadow-lg shadow-black/10 backdrop-blur-xl"
+        scrolled || alwaysVisible
+          ? "border-blue-950/10 bg-blue-950 shadow-lg shadow-black/10"
           : "border-transparent bg-transparent"
       }`}
     >
