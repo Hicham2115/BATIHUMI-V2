@@ -17,8 +17,6 @@ const segments = [
     title: "Propriétaire / Locataire",
     description:
       "Vous faites face à un problème d'humidité dans votre logement ?",
-    cta: "Découvrir nos solutions",
-    href: "/particuliers",
     icon: User,
     image: "/images/proprietaire-locataire.jpg",
     imagePosition: "center",
