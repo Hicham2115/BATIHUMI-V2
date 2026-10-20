@@ -80,7 +80,7 @@ function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50 py-16 md:py-24">
+    <footer className="bg-slate-50 pt-16 pb-0 md:pt-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6 md:p-8">
           <CtaBanner />
@@ -154,6 +154,17 @@ export function Footer() {
             </p>
           </div>
         </div>
+        <p className="mx-auto max-w-[1440px] px-6 py-4 text-center text-[12px] text-slate-600 sm:px-8 lg:px-12">
+          Designed &amp; developed by{" "}
+          <a
+            href="https://www.stallionadvertising.ma/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-transparent underline-offset-2 transition-colors duration-200 hover:text-blue-800 hover:decoration-teal-500"
+          >
+            Stallion Advertising
+          </a>
+        </p>
       </div>
     </footer>
   );
