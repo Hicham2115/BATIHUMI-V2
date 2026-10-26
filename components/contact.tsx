@@ -1,9 +1,9 @@
 "use client";
 
 import { type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
-  CheckCircle2,
   Clock,
   Mail,
   MapPin,
@@ -61,6 +61,7 @@ const services = [
 ];
 
 export function Contact() {
+  const router = useRouter();
   const sendMessage = useSendContactMessage();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -81,6 +82,9 @@ export function Contact() {
     }
 
     sendMessage.mutate(parsed.data, {
+      onSuccess: () => {
+        router.push("/thank-you");
+      },
       onError: (error) => {
         toast.error(getErrorMessage(error));
       },
@@ -184,23 +188,10 @@ export function Contact() {
           </div>
 
           <div className="p-8 md:p-10">
-            {sendMessage.isSuccess ? (
-              <div className="flex h-full flex-col items-center justify-center text-center">
-                <span className="flex size-14 items-center justify-center rounded-full bg-blue-50 text-blue-700">
-                  <CheckCircle2 className="size-7" />
-                </span>
-                <h3 className="mt-5 font-heading text-lg font-bold text-blue-950">
-                  Merci pour votre message !
-                </h3>
-                <p className="mt-2 max-w-xs text-sm text-slate-600">
-                  Notre équipe revient vers vous sous 2h, du lundi au vendredi.
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="flex h-full flex-col gap-5"
-              >
+            <form
+              onSubmit={handleSubmit}
+              className="flex h-full flex-col gap-5"
+            >
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div>
                     <label
@@ -299,8 +290,7 @@ export function Contact() {
                   <Send className="size-4" />
                   {sendMessage.isPending ? "Envoi en cours..." : "Envoyer ma demande"}
                 </Button>
-              </form>
-            )}
+            </form>
           </div>
         </div>
 

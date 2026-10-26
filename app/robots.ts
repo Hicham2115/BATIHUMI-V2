@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.batihumi.com";
   return {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/admin", "/admin/*", "/api/*"],
     },
-    sitemap: "https://www.batihumi.com/sitemap.xml",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

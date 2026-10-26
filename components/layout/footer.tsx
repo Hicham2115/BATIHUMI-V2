@@ -7,20 +7,22 @@ const linkColumns = [
   {
     title: "Nos services",
     links: [
-      { label: "Remontées capillaires", href: "#services" },
-      { label: "Moisissures", href: "#services" },
-      { label: "Salpêtre", href: "#services" },
-      { label: "Infiltrations", href: "#services" },
-      { label: "Ventilation & VMC", href: "#services" },
+      { label: "Humidité ascensionnelle", href: "/services/humidite-ascensionnelle" },
+      { label: "Injection de résine", href: "/services/injection-resine" },
+      { label: "Assèchement de murs", href: "/services/assechement-murs" },
+      { label: "Traitement moisissures", href: "/services/traitement-moisissures" },
+      { label: "Traitement anti-salpêtre", href: "/services/traitement-anti-salpetre" },
+      { label: "Protection hydrofuge", href: "/services/protection-hydrofuge" },
     ],
   },
   {
-    title: "Ressources",
+    title: "Ressources & Guides",
     links: [
-      { label: "Réalisations", href: "#realisations" },
-      { label: "Avis clients", href: "#avis-clients" },
-      { label: "Zone d'intervention", href: "#zone-intervention" },
-      { label: "FAQ", href: "#faq" },
+      { label: "Blog & Guides experts", href: "/blog" },
+      { label: "Réalisations avant/après", href: "/#realisations" },
+      { label: "Avis clients certifiés", href: "/#avis-clients" },
+      { label: "Zone d'intervention IDF", href: "/#zone-intervention" },
+      { label: "Questions fréquentes", href: "/#faq" },
     ],
   },
   {
