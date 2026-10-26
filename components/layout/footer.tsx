@@ -156,6 +156,17 @@ export function Footer() {
             </p>
           </div>
         </div>
+        <p className="mx-auto max-w-[1440px] px-6 py-4 text-center text-[12px] text-slate-500 sm:px-8 lg:px-12">
+          Designed &amp; developed by{" "}
+          <a
+            href="https://www.stallionadvertising.ma/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline mb-20 decoration-transparent underline-offset-2 transition-colors duration-200 hover:text-blue-950 hover:decoration-teal-400"
+          >
+            Stallion Advertising
+          </a>
+        </p>
       </div>
     </footer>
   );
