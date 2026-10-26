@@ -7,16 +7,19 @@ import { ArrowRight, ChevronDown, ChevronRight, Menu, Phone } from "lucide-react
 
 import { Button } from "@/components/ui/button";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { services } from "@/lib/services-data";
 
 const navLinks = [
@@ -64,6 +67,7 @@ function useScrolled(threshold = 24) {
 export function Header({ alwaysVisible = false }: { alwaysVisible?: boolean }) {
   const scrolled = useScrolled();
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header
@@ -134,37 +138,47 @@ export function Header({ alwaysVisible = false }: { alwaysVisible?: boolean }) {
             </Button>
           </div>
 
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-white hover:bg-white/10 hover:text-white lg:hidden"
-              >
-                <Menu className="size-5" />
-                <span className="sr-only">Ouvrir le menu</span>
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent
-              align="end"
-              sideOffset={8}
-              className="w-[calc(100vw-2rem)] max-w-sm rounded-xl p-3 shadow-xl lg:hidden"
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger
+              render={
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Ouvrir le menu"
+                  className="text-white hover:bg-white/10 hover:text-white lg:hidden"
+                />
+              }
             >
-              <div className="flex flex-col">
+              <Menu className="size-5" />
+            </SheetTrigger>
+            <SheetContent
+              side="right"
+              className="w-[min(88vw,22rem)] gap-0 border-l border-white/10 bg-blue-950 p-0 text-white sm:max-w-none"
+            >
+              <SheetHeader className="border-b border-white/10 px-6 py-5 pr-14 text-left">
+                <SheetTitle className="text-white">Navigation</SheetTitle>
+                <SheetDescription className="text-blue-200/75">
+                  BATIHUMI · Expert anti-humidité
+                </SheetDescription>
+              </SheetHeader>
+
+              <div className="flex-1 overflow-y-auto px-5 py-4">
                 <button
                   type="button"
                   onClick={() => setMobileServicesOpen((open) => !open)}
-                  className="flex items-center justify-between rounded-md px-1.5 py-2 text-sm hover:bg-muted"
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-3 text-left text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
                   aria-expanded={mobileServicesOpen}
+                  aria-controls="mobile-services-list"
                 >
                   Nos services
                   <ChevronDown
-                    className={`size-4 text-muted-foreground transition-transform duration-200 ${
+                    className={`size-4 text-sky-300 transition-transform duration-200 ${
                       mobileServicesOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 <div
+                  id="mobile-services-list"
                   className={`grid overflow-hidden transition-all duration-200 ${
                     mobileServicesOpen
                       ? "grid-rows-[1fr] opacity-100"
@@ -172,12 +186,13 @@ export function Header({ alwaysVisible = false }: { alwaysVisible?: boolean }) {
                   }`}
                 >
                   <div className="min-h-0 overflow-hidden">
-                    <div className="flex flex-col gap-0.5 py-1 pl-3">
+                    <div className="flex flex-col border-l border-white/15 py-1 pl-3">
                       {services.map((service) => (
                         <Link
                           key={service.slug}
                           href={`/services/${service.slug}`}
-                          className="rounded-md px-1.5 py-2 text-[13px] text-slate-600 hover:bg-muted hover:text-blue-700"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="rounded-md px-3 py-2.5 text-[13px] text-blue-100/80 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
                         >
                           {service.title}
                         </Link>
@@ -185,37 +200,42 @@ export function Header({ alwaysVisible = false }: { alwaysVisible?: boolean }) {
                     </div>
                   </div>
                 </div>
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="rounded-md px-1.5 py-2 text-sm hover:bg-muted"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+
+                <nav aria-label="Navigation principale" className="mt-2 flex flex-col">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="rounded-lg px-3 py-3 text-sm font-medium text-blue-100/85 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
               </div>
-              <div className="my-2 h-px bg-border" />
-              <div className="flex flex-col gap-3 p-1.5">
+
+              <div className="mt-auto flex flex-col gap-4 border-t border-white/10 p-5">
                 <a
                   href="https://api.whatsapp.com/send/?phone=33768841324&text&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-semibold text-blue-700"
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/10"
                 >
-                  <Phone className="size-4" />
+                  <Phone className="size-4 text-sky-300" />
                   07 68 84 13 24
                 </a>
                 <Button
-                  className="bg-blue-700 text-white hover:bg-blue-800"
-                  render={<Link href="/#contact" />}
+                  className="h-11 w-full rounded-full bg-blue-600 text-white hover:bg-blue-500"
+                  render={<Link href="/#contact" onClick={() => setMobileMenuOpen(false)} />}
                   nativeButton={false}
                 >
                   Demander un diagnostic
+                  <ArrowRight className="size-4" />
                 </Button>
               </div>
-            </PopoverContent>
-          </Popover>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
