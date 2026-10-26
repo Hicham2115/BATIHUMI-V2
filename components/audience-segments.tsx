@@ -17,6 +17,8 @@ const segments = [
     title: "Propriétaire / Locataire",
     description:
       "Vous faites face à un problème d'humidité dans votre logement ?",
+    cta: "Découvrir nos solutions",
+    href: "/particuliers",
     icon: User,
     image: "/images/proprietaire-locataire.jpg",
     imagePosition: "center",
@@ -24,6 +26,8 @@ const segments = [
   {
     title: "Vendeur / Acheteur immobilier",
     description: "Besoin d'un diagnostic avant la vente ou l'achat d'un bien ?",
+    cta: "En savoir plus",
+    href: "/transaction",
     icon: Home,
     image: "/images/vendeur-acheteur.avif",
     imagePosition: "top",
@@ -78,7 +82,7 @@ export function AudienceSegments() {
 
         <div className="mt-12 grid grid-cols-1 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-white sm:grid-cols-2 sm:divide-x lg:grid-cols-4 lg:divide-y-0">
           {segments.map((segment) => (
-            <div key={segment.title} className="flex min-w-0 flex-col bg-white">
+            <div key={segment.href} className="flex min-w-0 flex-col bg-white">
               <div className="relative aspect-[4/3] shrink-0 overflow-hidden bg-slate-100">
                 <Image
                   src={segment.image}
@@ -98,15 +102,13 @@ export function AudienceSegments() {
                 <p className="mt-2 text-sm text-slate-600">
                   {segment.description}
                 </p>
-                {segment.cta && segment.href ? (
-                  <Link
-                    href={segment.href}
-                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-700 hover:text-blue-800"
-                  >
-                    {segment.cta}
-                    <ArrowRight className="size-4" />
-                  </Link>
-                ) : null}
+                <Link
+                  href={segment.href}
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-700 hover:text-blue-800"
+                >
+                  {segment.cta}
+                  <ArrowRight className="size-4" />
+                </Link>
               </div>
             </div>
           ))}

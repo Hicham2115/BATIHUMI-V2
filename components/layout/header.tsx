@@ -23,6 +23,7 @@ const navLinks = [
   { label: "Zone d'intervention", href: "/#zone-intervention" },
   { label: "Réalisations", href: "/#realisations" },
   { label: "Avis clients", href: "/#avis-clients" },
+  { label: "Blog & Guides", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/#contact" },
 ];

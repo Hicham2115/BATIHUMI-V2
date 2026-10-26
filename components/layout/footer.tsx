@@ -7,20 +7,22 @@ const linkColumns = [
   {
     title: "Nos services",
     links: [
-      { label: "Remontées capillaires", href: "#services" },
-      { label: "Moisissures", href: "#services" },
-      { label: "Salpêtre", href: "#services" },
-      { label: "Infiltrations", href: "#services" },
-      { label: "Ventilation & VMC", href: "#services" },
+      { label: "Humidité ascensionnelle", href: "/services/humidite-ascensionnelle" },
+      { label: "Injection de résine", href: "/services/injection-resine" },
+      { label: "Assèchement de murs", href: "/services/assechement-murs" },
+      { label: "Traitement moisissures", href: "/services/traitement-moisissures" },
+      { label: "Traitement anti-salpêtre", href: "/services/traitement-anti-salpetre" },
+      { label: "Protection hydrofuge", href: "/services/protection-hydrofuge" },
     ],
   },
   {
-    title: "Ressources",
+    title: "Ressources & Guides",
     links: [
-      { label: "Réalisations", href: "#realisations" },
-      { label: "Avis clients", href: "#avis-clients" },
-      { label: "Zone d'intervention", href: "#zone-intervention" },
-      { label: "FAQ", href: "#faq" },
+      { label: "Blog & Guides experts", href: "/blog" },
+      { label: "Réalisations avant/après", href: "/#realisations" },
+      { label: "Avis clients certifiés", href: "/#avis-clients" },
+      { label: "Zone d'intervention IDF", href: "/#zone-intervention" },
+      { label: "Questions fréquentes", href: "/#faq" },
     ],
   },
   {
@@ -80,7 +82,7 @@ function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50 pt-16 pb-0 md:pt-24">
+    <footer className="bg-slate-50 py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6 md:p-8">
           <CtaBanner />
@@ -154,17 +156,6 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <p className="mx-auto max-w-[1440px] px-6 py-4 text-center text-[12px] text-slate-600 sm:px-8 lg:px-12">
-          Designed &amp; developed by{" "}
-          <a
-            href="https://www.stallionadvertising.ma/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-transparent underline-offset-2 transition-colors duration-200 hover:text-blue-800 hover:decoration-teal-500"
-          >
-            Stallion Advertising
-          </a>
-        </p>
       </div>
     </footer>
   );

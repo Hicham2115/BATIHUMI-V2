@@ -7,13 +7,30 @@ import { Realisations } from "@/components/realisations";
 import { SaleExpertise } from "@/components/sale-expertise";
 import { Reviews } from "@/components/reviews";
 import { CoverageArea } from "@/components/coverage-area";
-import { Faq } from "@/components/faq";
+import { Faq, faqs } from "@/components/faq";
 import { Contact } from "@/components/contact";
 import { FadeIn } from "@/components/fade-in";
 
 export default function Home() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Header />
       <Hero />
       <FadeIn>

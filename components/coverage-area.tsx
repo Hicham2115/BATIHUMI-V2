@@ -1,14 +1,15 @@
 import { MapPin } from "lucide-react";
+import Link from "next/link";
 
 const departments = [
-  { code: "75", name: "Paris" },
-  { code: "92", name: "Hauts-de-Seine" },
-  { code: "93", name: "Seine-Saint-Denis" },
-  { code: "94", name: "Val-de-Marne" },
-  { code: "91", name: "Essonne" },
-  { code: "95", name: "Val-d'Oise" },
-  { code: "77", name: "Seine-et-Marne" },
-  { code: "78", name: "Yvelines" },
+  { code: "75", name: "Paris", slug: "paris" },
+  { code: "92", name: "Hauts-de-Seine", slug: "hauts-de-seine" },
+  { code: "93", name: "Seine-Saint-Denis", slug: "seine-saint-denis" },
+  { code: "94", name: "Val-de-Marne", slug: "val-de-marne" },
+  { code: "91", name: "Essonne", slug: "essonne" },
+  { code: "95", name: "Val-d'Oise", slug: "val-doise" },
+  { code: "77", name: "Seine-et-Marne", slug: "seine-et-marne" },
+  { code: "78", name: "Yvelines", slug: "yvelines" },
 ];
 
 const cityColumns = [
@@ -197,15 +198,18 @@ export function CoverageArea() {
 
             <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
               {departments.map((dept) => (
-                <div
+                <Link
                   key={dept.code}
-                  className="rounded-xl bg-white p-4 text-center shadow-sm"
+                  href={`/interventions/${dept.slug}`}
+                  className="group block rounded-xl bg-white p-4 text-center shadow-sm ring-1 ring-slate-200/60 transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:ring-blue-700/40"
                 >
-                  <p className="font-heading text-xl font-black text-blue-700">
+                  <p className="font-heading text-xl font-black text-blue-700 transition-transform group-hover:scale-105">
                     {dept.code}
                   </p>
-                  <p className="mt-0.5 text-xs text-slate-600">{dept.name}</p>
-                </div>
+                  <p className="mt-0.5 text-xs text-slate-600 group-hover:text-blue-950 font-medium">
+                    {dept.name}
+                  </p>
+                </Link>
               ))}
             </div>
 

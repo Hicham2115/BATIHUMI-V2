@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+export const faqs = [
   {
     question: "Le diagnostic est-il vraiment gratuit et sans engagement ?",
     answer:
