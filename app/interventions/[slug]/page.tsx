@@ -3,8 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   CalendarCheck,
-  CheckCircle2,
-  Clock,
   MapPin,
   Phone,
   ShieldCheck,

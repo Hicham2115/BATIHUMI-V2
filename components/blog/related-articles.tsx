@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { fallbackArticles } from "@/lib/articles-data";
 import { BlogCard } from "./blog-card";

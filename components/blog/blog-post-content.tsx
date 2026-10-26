@@ -1,23 +1,17 @@
 import ReactMarkdown from "react-markdown";
 import {
-  AlertTriangle,
-  Award,
   CheckCircle2,
-  Clock,
-  HelpCircle,
   Phone,
   ShieldCheck,
-  UserCheck,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export function BlogPostContent({
   content,
-  title,
 }: {
   content: string;
-  title: string;
+  title?: string;
 }) {
   return (
     <div className="space-y-10">

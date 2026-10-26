@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, Clock, FileText, Share2, ShieldCheck, Sparkles, User } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, ShieldCheck } from "lucide-react";
 
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -125,7 +125,9 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.batihumi.com";
-  const creationTime = article._creationTime || Date.now();
+  const publicationDate = article._creationTime
+    ? new Date(article._creationTime).toISOString()
+    : "2026-08-24T16:29:25.125Z";
   const category = getArticleCategory(article.slug);
   const readingTime = estimateReadingTime(article.content);
 
@@ -141,8 +143,8 @@ export default async function BlogPostPage({ params }: Props) {
         : `${siteUrl}${rawImage}`
       : `${siteUrl}/images/logo.png`,
     url: `${siteUrl}/blog/${article.slug}`,
-    datePublished: new Date(creationTime).toISOString(),
-    dateModified: new Date(creationTime).toISOString(),
+    datePublished: publicationDate,
+    dateModified: publicationDate,
     author: {
       "@type": "Organization",
       name: "BATIHUMI",
