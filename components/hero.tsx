@@ -117,7 +117,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-xl px-5 py-8 pb-[max(2rem,env(safe-area-inset-bottom))] sm:px-8">
+        <div className="mx-0 max-w-xl px-5 py-8 pb-[max(2rem,env(safe-area-inset-bottom))] sm:px-8">
           <p className="text-base leading-7 text-slate-300">
             Diagnostic gratuit sous 48h{" "}
             <span className="text-slate-500">·</span> Intervention rapide{" "}
