@@ -40,13 +40,13 @@ const contactInfo = [
     href: "mailto:contact@batihumi.com",
   },
   {
-    icon: MapPin,
+    icon: MapPin, 
     label: "Adresse",
     value: "6 Rue de Belfort, 92600 Asnières-sur-Seine",
-  },
+  }, 
   {
     icon: Clock,
-    label: "Horaires",
+    label: "Horaires", 
     value: "Lun - Ven : 9h - 17h",
   },
 ];
