@@ -36,8 +36,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@batihumi.fr",
-    href: "mailto:contact@batihumi.fr",
+    value: "contact@batihumi.com",
+    href: "mailto:contact@batihumi.com",
   },
   {
     icon: MapPin,
