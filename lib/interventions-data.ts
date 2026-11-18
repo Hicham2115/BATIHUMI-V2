@@ -2,6 +2,7 @@ export interface Intervention {
   slug: string;
   departmentCode: string;
   name: string;
+  locative: string;
   title: string;
   description: string;
   content: string;
@@ -13,6 +14,7 @@ export const interventions: Intervention[] = [
     slug: "paris",
     departmentCode: "75",
     name: "Paris",
+    locative: "à Paris",
     title: "Traitement de l'Humidité à Paris (75) | Diagnostic Gratuit 48h",
     description:
       "Expertise et assèchement des murs, caves voûtées et appartements parisiens (75). Traitement du salpêtre, des remontées capillaires et condensation. Garantie décennale 10 ans.",
@@ -31,6 +33,7 @@ export const interventions: Intervention[] = [
     slug: "hauts-de-seine",
     departmentCode: "92",
     name: "Hauts-de-Seine",
+    locative: "dans les Hauts-de-Seine",
     title:
       "Traitement de l'Humidité dans les Hauts-de-Seine (92) | BATIHUMI Siège",
     description:
@@ -54,6 +57,7 @@ export const interventions: Intervention[] = [
     slug: "seine-saint-denis",
     departmentCode: "93",
     name: "Seine-Saint-Denis",
+    locative: "en Seine-Saint-Denis",
     title: "Traitement Humidité en Seine-Saint-Denis (93) | Diagnostic Gratuit",
     description:
       "Éradication définitive de l'humidité, des moisissures et du salpêtre dans le 93 (Saint-Denis, Montreuil, Pantin, Aubervilliers). Diagnostic sans frais.",
@@ -74,6 +78,7 @@ export const interventions: Intervention[] = [
     slug: "val-de-marne",
     departmentCode: "94",
     name: "Val-de-Marne",
+    locative: "dans le Val-de-Marne",
     title:
       "Traitement de l'Humidité dans le Val-de-Marne (94) | Solutions Durables",
     description:
@@ -95,6 +100,7 @@ export const interventions: Intervention[] = [
     slug: "yvelines",
     departmentCode: "78",
     name: "Yvelines",
+    locative: "dans les Yvelines",
     title:
       "Traitement de l'Humidité dans les Yvelines (78) | Maisons Anciennes & Pavillons",
     description:
@@ -116,6 +122,7 @@ export const interventions: Intervention[] = [
     slug: "essonne",
     departmentCode: "91",
     name: "Essonne",
+    locative: "en Essonne",
     title: "Traitement de l'Humidité en Essonne (91) | Éradication Infiltrations",
     description:
       "Diagnostic et assèchement de murs en Essonne (91 : Évry, Corbeil, Massy, Palaiseau, Sainte-Geneviève-des-Bois). Devis gratuit sous 48h.",
@@ -136,6 +143,7 @@ export const interventions: Intervention[] = [
     slug: "val-doise",
     departmentCode: "95",
     name: "Val-d'Oise",
+    locative: "dans le Val-d'Oise",
     title:
       "Traitement Humidité & Assèchement Val-d'Oise (95) | Diagnostic Immédiat",
     description:
@@ -157,6 +165,7 @@ export const interventions: Intervention[] = [
     slug: "seine-et-marne",
     departmentCode: "77",
     name: "Seine-et-Marne",
+    locative: "en Seine-et-Marne",
     title: "Traitement de l'Humidité en Seine-et-Marne (77) | Maisons de Campagne & Pavillons",
     description:
       "Traitement des remontées capillaires, caves humides et façades en Seine-et-Marne (77 : Meaux, Chelles, Melun, Pontault-Combault, Fontainebleau).",

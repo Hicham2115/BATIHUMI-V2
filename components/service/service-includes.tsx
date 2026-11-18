@@ -1,3 +1,5 @@
+import { MapPin } from "lucide-react";
+
 import type { Service } from "@/lib/services-data";
 
 export function ServiceIncludes({ service }: { service: Service }) {
@@ -32,6 +34,35 @@ export function ServiceIncludes({ service }: { service: Service }) {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="relative mt-12 overflow-hidden rounded-3xl bg-blue-950 p-8 sm:p-12 lg:p-14">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.06]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, white 1px, transparent 1px)",
+              backgroundSize: "24px 24px",
+            }}
+            aria-hidden="true"
+          />
+          <div className="pointer-events-none absolute -top-24 -right-16 size-80 rounded-full bg-blue-700/30 blur-3xl" />
+
+          <div className="relative grid gap-6 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-4">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white">
+                <MapPin className="size-3.5 text-sky-400" />
+                Zone d&rsquo;intervention
+              </span>
+              <h3 className="mt-4 font-heading text-2xl leading-tight font-extrabold text-white sm:text-3xl">
+                {service.title}{" "}
+                <span className="text-sky-400">à Paris et en Île-de-France</span>
+              </h3>
+            </div>
+            <p className="border-white/15 text-base leading-relaxed text-blue-100/90 sm:text-[17px] lg:col-span-8 lg:border-l lg:pl-12">
+              {service.localContent}
+            </p>
+          </div>
         </div>
       </div>
     </section>

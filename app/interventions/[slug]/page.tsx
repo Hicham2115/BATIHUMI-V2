@@ -6,7 +6,7 @@ import {
   MapPin,
   Phone,
   ShieldCheck,
-  Sparkles,
+  ClipboardCheck,
   Zap,
 } from "lucide-react";
 
@@ -153,8 +153,8 @@ export default async function InterventionPage({ params }: Props) {
               </span>
 
               <h1 className="mt-5 font-heading text-4xl leading-[1.08] font-black tracking-tight text-white sm:text-5xl md:text-6xl">
-                Traitement de l&rsquo;humidité dans le{" "}
-                <span className="text-sky-400">{intervention.name}</span>
+                Traitement de l&rsquo;humidité{" "}
+                <span className="text-sky-400">{intervention.locative}</span>
               </h1>
 
               <p className="mt-5 text-lg leading-relaxed text-blue-100/85">
@@ -172,7 +172,7 @@ export default async function InterventionPage({ params }: Props) {
                   Garantie Décennale 10 ans
                 </span>
                 <span className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs sm:text-sm font-medium text-white backdrop-blur-sm">
-                  <Sparkles className="size-4 text-sky-400" />
+                  <ClipboardCheck className="size-4 text-sky-400" />
                   Diagnostic gratuit sur place
                 </span>
               </div>
@@ -213,8 +213,8 @@ export default async function InterventionPage({ params }: Props) {
                     Expertise locale
                   </p>
                   <h2 className="mt-2 font-heading text-2xl sm:text-3xl font-extrabold text-blue-950">
-                    Spécificités de l&rsquo;humidité dans le{" "}
-                    {intervention.departmentCode} ({intervention.name})
+                    Spécificités de l&rsquo;humidité {intervention.locative} (
+                    {intervention.departmentCode})
                   </h2>
                 </div>
 
@@ -249,8 +249,7 @@ export default async function InterventionPage({ params }: Props) {
               {/* Sidebar: 4-Step Process Card */}
               <div className="lg:col-span-5 rounded-3xl bg-blue-950 p-8 text-white shadow-xl">
                 <h3 className="font-heading text-xl font-bold text-white mb-6">
-                  Notre protocole d&rsquo;intervention dans le{" "}
-                  {intervention.departmentCode}
+                  Notre protocole d&rsquo;intervention {intervention.locative}
                 </h3>
 
                 <div className="space-y-6">

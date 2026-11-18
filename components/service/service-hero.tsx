@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarCheck, Phone, ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { CalendarCheck, Phone, ShieldCheck, ClipboardCheck, Zap } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import type { Service } from "@/lib/services-data";
 
 const featurePills = [
-  { icon: Sparkles, label: "Diagnostic gratuit" },
+  { icon: ClipboardCheck, label: "Diagnostic gratuit" },
   { icon: Zap, label: "Intervention sous 48h" },
   { icon: ShieldCheck, label: "Garantie décennale" },
 ]; 

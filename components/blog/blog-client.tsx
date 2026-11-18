@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useQuery } from "convex/react";
-import { ArrowRight, BookOpen, Clock, FileText, Search, Sparkles, X } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, FileText, Search, Bookmark, X } from "lucide-react";
 
 import { api } from "@/convex/_generated/api";
 import {
@@ -154,7 +154,7 @@ export function BlogClient() {
                   )}
                   <div className="absolute top-4 left-4 flex gap-2">
                     <span className="rounded-full bg-blue-700 px-3 py-1 text-xs font-bold text-white shadow-sm flex items-center gap-1.5">
-                      <Sparkles className="size-3" />
+                      <Bookmark className="size-3" />
                       Guide Recommandé
                     </span>
                     <span className="rounded-full bg-blue-950/85 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
