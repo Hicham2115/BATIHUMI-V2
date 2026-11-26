@@ -1,4 +1,4 @@
-import { BookOpen, ShieldCheck, Sparkles, Clock } from "lucide-react";
+import { BookOpen, ShieldCheck, Droplets, Clock } from "lucide-react";
 
 export function BlogHero() {
   return (
@@ -18,7 +18,7 @@ export function BlogHero() {
 
       <div className="relative mx-auto max-w-7xl px-4 md:px-8 text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm">
-          <Sparkles className="size-3.5 text-sky-400" />
+          <Droplets className="size-3.5 text-sky-400" />
           Centre d&rsquo;Expertise & Guides Pratiques
         </span>
 

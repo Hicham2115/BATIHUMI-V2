@@ -1,22 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarCheck, Phone, ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { CalendarCheck, Phone, ShieldCheck, ClipboardCheck, Zap } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import type { Service } from "@/lib/services-data";
 
 const featurePills = [
-  { icon: Sparkles, label: "Diagnostic gratuit" },
+  { icon: ClipboardCheck, label: "Diagnostic gratuit" },
   { icon: Zap, label: "Intervention sous 48h" },
   { icon: ShieldCheck, label: "Garantie décennale" },
-];
+]; 
 
 export function ServiceHero({ service }: { service: Service }) {
   return (
     <section className="relative overflow-hidden bg-blue-950 pt-28 pb-16 md:pt-36 md:pb-24">
-      <div
+      <div 
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
-        style={{
+        style={{ 
           backgroundImage:
             "radial-gradient(circle, white 1px, transparent 1px)",
           backgroundSize: "24px 24px",
@@ -26,12 +26,12 @@ export function ServiceHero({ service }: { service: Service }) {
       <div className="pointer-events-none absolute -top-24 right-0 size-96 rounded-full bg-blue-700/25 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 md:px-8 lg:grid-cols-2 lg:gap-16">
-        <div>
+        <div> 
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm">
             <span className="size-1.5 rounded-full bg-sky-400" aria-hidden="true" />
             Disponible maintenant. Nous venons chez vous.
-          </span>
-
+          </span> 
+    
           <h1 className="mt-5 font-heading text-4xl leading-[1.05] font-black tracking-tight text-white sm:text-5xl">
             {service.title}
           </h1>
@@ -50,17 +50,17 @@ export function ServiceHero({ service }: { service: Service }) {
                 {pill.label}
               </span>
             ))}
-          </div>
+          </div> 
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button
-              size="lg"
+            <Button 
+              size="lg" 
               className="h-12 gap-2 bg-white px-6 text-base font-bold text-blue-950 hover:bg-blue-50"
               render={<a href="tel:+33768841324" />}
               nativeButton={false}
-            >
+            > 
               <Phone className="size-4" />
-              Appelez maintenant
+              Appelez maintenant 
             </Button>
             <Button
               size="lg"

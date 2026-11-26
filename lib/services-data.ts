@@ -3,7 +3,7 @@ import {
   Droplets,
   FlaskConical,
   ShieldCheck,
-  Sparkles,
+  PaintRoller,
   SprayCan,
   Waves,
   Wind,
@@ -23,6 +23,7 @@ export type Service = {
   shortDescription: string;
   description: string;
   image: string;
+  localContent: string;
   includes: ServiceInclude[];
 };
 
@@ -36,6 +37,8 @@ export const services: Service[] = [
     description:
       "Avant toute intervention, notre technicien se déplace gratuitement chez vous pour identifier l'origine exacte de vos problèmes d'humidité. Un diagnostic sérieux et sans engagement, condition indispensable à un traitement durable.",
     image: "/images/diagnostic-offert.png",
+    localContent:
+      "Vous cherchez un diagnostic humidité gratuit à Paris ou en Île-de-France ? BATIHUMI envoie un expert chez vous sous 48h à Paris (75), dans les Hauts-de-Seine (92), la Seine-Saint-Denis (93), le Val-de-Marne (94), les Yvelines (78), l'Essonne (91), le Val-d'Oise (95) et la Seine-et-Marne (77). Notre diagnostic humidité sans engagement identifie la cause réelle de vos murs humides, taches, moisissures ou salpêtre, avec rapport écrit et devis gratuit. Un artisan local, près de chez vous, pour un diagnostic fiable des appartements, maisons et copropriétés franciliennes.",
     includes: [
       {
         icon: Waves,
@@ -72,6 +75,8 @@ export const services: Service[] = [
     description:
       "Les remontées capillaires font monter l'eau du sol dans vos murs par capillarité. Nous traitons ce phénomène à la racine avec des techniques d'injection éprouvées, pour un mur durablement sec.",
     image: "/images/humidite-ascensionnelle.png",
+    localContent:
+      "Spécialiste du traitement des remontées capillaires à Paris et en Île-de-France, BATIHUMI intervient dans les immeubles anciens, pavillons et caves de Paris (75), des Hauts-de-Seine (92), du Val-de-Marne (94) et de toute la petite et grande couronne. Murs qui s'effritent, peinture qui cloque, traces blanches de salpêtre en bas des murs : nous stoppons l'humidité ascensionnelle à la source avec une barrière étanche durable. Entreprise locale d'assèchement de murs, devis gratuit, intervention rapide et garantie décennale 10 ans.",
     includes: [
       {
         icon: Waves,
@@ -108,6 +113,8 @@ export const services: Service[] = [
     description:
       "L'injection de résine hydrofuge sous pression crée une barrière continue à la base des murs, empêchant durablement l'eau de remonter par capillarité.",
     image: "/images/injection-resine.png",
+    localContent:
+      "BATIHUMI réalise l'injection de résine hydrofuge à Paris et en Île-de-France pour traiter définitivement les remontées d'eau dans les murs en pierre, meulière, brique ou moellons. Nos techniciens interviennent dans le 75, 92, 93, 94, 78, 91, 95 et 77 : immeubles haussmanniens, maisons anciennes, caves et sous-sols. L'injection sous pression crée une barrière chimique efficace contre l'humidité par capillarité. Devis gratuit près de chez vous, travaux propres et garantie décennale 10 ans.",
     includes: [
       {
         icon: Waves,
@@ -144,6 +151,8 @@ export const services: Service[] = [
     description:
       "Une fois la cause traitée, l'humidité résiduelle doit être évacuée. Nous adaptons nos techniques d'assèchement à la nature de vos murs pour un résultat rapide et durable.",
     image: "/images/assechement-murs.png",
+    localContent:
+      "Besoin d'un assèchement de murs humides à Paris ou en Île-de-France ? BATIHUMI traite les murs humides, caves inondées et sous-sols dans les appartements, maisons et copropriétés de Paris (75), des Hauts-de-Seine (92), du Val-de-Marne (94), de Seine-Saint-Denis (93) et des départements voisins. Nous combinons diagnostic précis, traitement de la cause et ventilation adaptée pour un assèchement durable. Artisan local, intervention sous 48h, devis gratuit et garantie décennale.",
     includes: [
       {
         icon: Wind,
@@ -180,6 +189,8 @@ export const services: Service[] = [
     description:
       "Nos traitements hydrofuges protègent vos façades contre les infiltrations d'eau de pluie, tout en laissant le mur respirer, pour éviter tout effet de rétention.",
     image: "/images/protection-hydrofuge.png",
+    localContent:
+      "BATIHUMI applique une protection hydrofuge pour façades et murs à Paris et en Île-de-France afin de bloquer les infiltrations d'eau de pluie sans empêcher le mur de respirer. Traitement hydrofuge de façade, enduit de protection et imperméabilisation pour pavillons, immeubles et copropriétés dans le 75, 92, 93, 94, 78, 91, 95 et 77. Un traitement préventif qui protège votre bâti du vieillissement. Devis gratuit, artisan local et garantie décennale 10 ans.",
     includes: [
       {
         icon: SprayCan,
@@ -214,6 +225,8 @@ export const services: Service[] = [
     description:
       "Les moisissures ne sont qu'un symptôme. Nous les éliminons en profondeur et traitons leur cause pour un intérieur sain, durablement débarrassé du problème.",
     image: "/images/traitement-moisissures.png",
+    localContent:
+      "Moisissures sur les murs, au plafond ou dans la salle de bain ? BATIHUMI propose un traitement anti-moisissures à Paris et en Île-de-France : nettoyage fongicide, traitement de la condensation et installation de ventilation VMC ou VMI. Nous intervenons dans les logements de Paris (75), des Hauts-de-Seine (92), de Seine-Saint-Denis (93), du Val-de-Marne (94) et des départements voisins. Pour un air sain et un logement salubre, demandez votre devis gratuit auprès d'un expert local, garantie décennale 10 ans.",
     includes: [
       {
         icon: SprayCan,
@@ -250,6 +263,8 @@ export const services: Service[] = [
     description:
       "Fissures, joints dégradés, points d'infiltration : nous renforçons l'étanchéité de vos murs pour une protection durable contre toutes les entrées d'eau.",
     image: "/images/etancheite-murs.png",
+    localContent:
+      "BATIHUMI réalise l'étanchéité de murs enterrés, caves et sous-sols à Paris et en Île-de-France : cuvelage, enduit d'étanchéité et traitement des infiltrations d'eau. Nous intervenons dans le 75, 92, 93, 94, 78, 91, 95 et 77, notamment dans les zones à nappe phréatique haute proches de la Seine et de la Marne. Cave humide, mur qui suinte ou infiltration en façade : un artisan local vous propose un diagnostic gratuit, un devis rapide et une garantie décennale 10 ans.",
     includes: [
       {
         icon: Waves,
@@ -284,6 +299,8 @@ export const services: Service[] = [
     description:
       "Le salpêtre est le signe visible d'une humidité mal traitée. Nous éliminons ces dépôts et neutralisons les sels minéraux pour un résultat propre et durable.",
     image: "/images/traitement-anti-salpetre.png",
+    localContent:
+      "Salpêtre sur vos murs ? BATIHUMI propose un traitement anti-salpêtre à Paris et en Île-de-France : brossage, traitement des sels, barrière contre les remontées d'eau et enduit assainissant. Nous intervenons dans les caves voûtées, appartements anciens et maisons de Paris (75), des Hauts-de-Seine (92), du Val-de-Marne (94), de Seine-Saint-Denis (93) et des départements limitrophes. Artisan spécialiste de l'humidité près de chez vous, devis gratuit sous 48h et garantie décennale 10 ans.",
     includes: [
       {
         icon: SprayCan,
@@ -298,7 +315,7 @@ export const services: Service[] = [
           "Traitement chimique pour stopper la remontée des sels.",
       },
       {
-        icon: Sparkles,
+        icon: PaintRoller,
         title: "Enduit assainissant",
         description:
           "Application d'un enduit spécifique qui limite la réapparition.",
