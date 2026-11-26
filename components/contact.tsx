@@ -3,13 +3,7 @@
 import { type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import {
-  Clock,
-  Mail,
-  MapPin,
-  Send,
-  ShieldCheck,
-} from "lucide-react";
+import { Clock, Mail, MapPin, Send, ShieldCheck } from "lucide-react";
 
 import { WhatsappIcon } from "@/components/icons/whatsapp-icon";
 import { Button } from "@/components/ui/button";
@@ -40,13 +34,13 @@ const contactInfo = [
     href: "mailto:contact@batihumi.com",
   },
   {
-    icon: MapPin, 
+    icon: MapPin,
     label: "Adresse",
     value: "6 Rue de Belfort, 92600 Asnières-sur-Seine",
-  }, 
+  },
   {
     icon: Clock,
-    label: "Horaires", 
+    label: "Horaires",
     value: "Lun - Ven : 9h - 17h",
   },
 ];
@@ -192,104 +186,106 @@ export function Contact() {
               onSubmit={handleSubmit}
               className="flex h-full flex-col gap-5"
             >
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                  <div>
-                    <label
-                      htmlFor="contact-name"
-                      className="text-sm font-semibold text-blue-950"
-                    >
-                      Nom complet
-                    </label>
-                    <Input
-                      id="contact-name"
-                      name="name"
-                      required
-                      placeholder="Jean Dupont"
-                      className="mt-1.5 h-11"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="contact-phone"
-                      className="text-sm font-semibold text-blue-950"
-                    >
-                      Téléphone
-                    </label>
-                    <Input
-                      id="contact-phone"
-                      name="phone"
-                      type="tel"
-                      required
-                      placeholder="06 12 34 56 78"
-                      className="mt-1.5 h-11"
-                    />
-                  </div>
-                </div>
-
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <div>
                   <label
-                    htmlFor="contact-email"
+                    htmlFor="contact-name"
                     className="text-sm font-semibold text-blue-950"
                   >
-                    Email
+                    Nom complet
                   </label>
                   <Input
-                    id="contact-email"
-                    name="email"
-                    type="email"
+                    id="contact-name"
+                    name="name"
                     required
-                    placeholder="jean.dupont@email.com"
+                    placeholder="Jean Dupont"
                     className="mt-1.5 h-11"
                   />
                 </div>
-
                 <div>
                   <label
-                    htmlFor="contact-service"
+                    htmlFor="contact-phone"
                     className="text-sm font-semibold text-blue-950"
                   >
-                    Type de problème
+                    Téléphone
                   </label>
-                  <Select name="service" required>
-                    <SelectTrigger id="contact-service" className="mt-1.5 h-11">
-                      <SelectValue placeholder="Sélectionnez une option" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {services.map((service) => (
-                        <SelectItem key={service} value={service}>
-                          {service}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="flex flex-1 flex-col">
-                  <label
-                    htmlFor="contact-message"
-                    className="text-sm font-semibold text-blue-950"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
+                  <Input
+                    id="contact-phone"
+                    name="phone"
+                    type="tel"
                     required
-                    rows={4}
-                    placeholder="Décrivez votre situation..."
-                    className="mt-1.5 min-h-24 w-full flex-1 resize-none rounded-lg border border-input bg-transparent px-2.5 py-2 text-sm text-slate-700 outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+                    placeholder="06 12 34 56 78"
+                    className="mt-1.5 h-11"
                   />
                 </div>
+              </div>
 
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={sendMessage.isPending}
-                  className="mt-1 h-auto w-full gap-2 bg-blue-950 py-3 text-white hover:bg-blue-900"
+              <div>
+                <label
+                  htmlFor="contact-email"
+                  className="text-sm font-semibold text-blue-950"
                 >
-                  <Send className="size-4" />
-                  {sendMessage.isPending ? "Envoi en cours..." : "Envoyer ma demande"}
-                </Button>
+                  Email
+                </label>
+                <Input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="jean.dupont@email.com"
+                  className="mt-1.5 h-11"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="contact-service"
+                  className="text-sm font-semibold text-blue-950"
+                >
+                  Type de problème
+                </label>
+                <Select name="service" required>
+                  <SelectTrigger id="contact-service" className="mt-1.5 h-11">
+                    <SelectValue placeholder="Sélectionnez une option" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {services.map((service) => (
+                      <SelectItem key={service} value={service}>
+                        {service}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="flex flex-1 flex-col">
+                <label
+                  htmlFor="contact-message"
+                  className="text-sm font-semibold text-blue-950"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  required
+                  rows={4}
+                  placeholder="Décrivez votre situation..."
+                  className="mt-1.5 min-h-24 w-full flex-1 resize-none rounded-lg border border-input bg-transparent px-2.5 py-2 text-sm text-slate-700 outline-none transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                size="lg"
+                disabled={sendMessage.isPending}
+                className="mt-1 h-auto w-full gap-2 bg-blue-950 py-3 text-white hover:bg-blue-900"
+              >
+                <Send className="size-4" />
+                {sendMessage.isPending
+                  ? "Envoi en cours..."
+                  : "Envoyer ma demande"}
+              </Button>
             </form>
           </div>
         </div>
